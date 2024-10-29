@@ -1,4 +1,4 @@
-# Teste Técnico - Engenharia de Dados
+  # Teste Técnico - Engenharia de Dados
 
 ![IP6](https://i.imgur.com/kXTnWUI.png)
 
@@ -19,7 +19,7 @@ O candidato deve propor soluções técnicas para resolver as dores do cliente, 
 
 O diagrama ilustra o fluxo de dados de diversas fontes (Google Analytics, Facebook Ads, Google Ads) sendo processados e consolidados no BigQuery, e o fluxo de dados para ferramentas de BI (Looker Studio) ou integração segura com agências externas.
 
-![Arquitetura](https://i.imgur.com/VPHixg3.jpeg)
+![Arquitetura](https://i.imgur.com/d8zmclK.jpeg)
 
 Fluxo de Comunicação:
 - Google Analytics: Captura dados de conversão e envia via API para o Cloud Functions.
@@ -50,19 +50,27 @@ Fluxo de Comunicação:
 **Escalabilidade e Performance:**
 
 - O BigQuery é ideal para lidar com grandes volumes de dados de múltiplas fontes, com consultas SQL rápidas e eficientes. É escalável e suporta análises complexas.
-- Cloud Functions automatiza o processo de ingestão de dados das APIs (Facebook Ads, Google Ads), permitindo a criação de pipelines leves e customizados, com uma integração fácil e custo-benefício eficiente. O Google Cloud Dataflow pode ser uma alternativa mais robusta caso o volume de dados aumente consideravelmente, especialmente para processamento em tempo real.
+- Cloud Functions automatiza o processo de ingestão de dados das APIs (Facebook Ads, Google Ads), permitindo a criação de pipelines leves e customizados, com uma integração fácil e custo-benefício eficiente. 
+- O Google Cloud Dataflow é uma alternativa robusta caso o volume de dados aumente consideravelmente, especialmente para processamento em tempo real.
 
 **Automatização de Dashboards:**
 
 - Com a integração do BigQuery com o Looker Studio, é possível fornecer relatórios diários automatizados, eliminando a necessidade de geração manual por parte do BI.
-- Dashboards personalizados podem ser criados para diferentes níveis de usuários, permitindo que as agências visualizem apenas os dados relevantes. Através de filtros dinâmicos, os usuários podem visualizar métricas importantes, como CPA (Custo por Aquisição) e ROAS (Retorno sobre Investimento Publicitário), com dados em tempo real.
+- Os data marts serão criados para organizar dados relevantes, permitindo que as agências acessem apenas as informações necessárias para avaliar o desempenho de campanhas, como CPA e ROAS. Isso otimiza a eficiência nas análises e fornece insights direcionados para decisões rápidas e informadas.
+
+**Modelo de Custo Flexível:**
+
+- A infraestrutura em nuvem permite que o cliente pague apenas pelos recursos que realmente utiliza, como armazenamento, processamento e consultas, resultando em um modelo de custo flexível e escalável. Isso significa que, à medida que a demanda por dados cresce, o custo se ajusta conforme necessário, sem grandes investimentos iniciais.
 
 **Segurança e Privacidade:**
 
-- Cloud IAM garante que apenas usuários e agências autorizadas tenham acesso aos dados, com permissões granulares, minimizando o risco de acesso não autorizado.
-- VPC Service Controls reforça a proteção de dados sensíveis, prevenindo a exfiltração de dados confidenciais e garantindo que todas as operações estejam em conformidade com a LGPD/GDPR.
-- A integração de Cloud IAM e Data Loss Prevention (DLP) garante controle rígido de acessos e proteção dos dados sensíveis, permitindo que as agências tenham acesso apenas ao que é necessário sem expor PII.
-  
+- Cloud IAM e Data Loss Prevention garantem que apenas usuários autorizados tenham acesso a dados sensíveis, minimizando riscos.
+- A implementação de monitoramento contínuo e testes regulares garante a qualidade dos dados, assegurando que as informações fornecidas sejam sempre precisas e atualizadas
+
+**Qualidade e Confiabilidade:**
+
+- O controle rigoroso de qualidade dos dados, combinado com a capacidade de monitoramento do Stackdriver, proporciona uma infraestrutura confiável e robusta, que atende às necessidades do cliente de forma consistente.
+
 ## D. Premissas do Cliente 
 
 - **Acesso às APIs e Dados:** O cliente deve garantir acesso adequado e contínuo às APIs do Google Analytics, Facebook Ads e Google Ads, com credenciais atualizadas e gerenciadas pela equipe de TI para evitar interrupções no fluxo de dados.
@@ -71,6 +79,7 @@ Fluxo de Comunicação:
 - **Compliance e Segurança de Dados:** Garantir que todas as práticas de acesso e compartilhamento de dados estejam em conformidade com as leis de proteção de dados (como LGPD/GDPR). Um responsável pela conformidade deve ser designado para revisar regularmente as práticas de segurança.
 
 ## D. Estrutura Organizacional Proposta 
+![Ornograma](https://i.imgur.com/CbqsYGS.jpeg)
 
 Equipe de Marketing:
 
@@ -95,11 +104,10 @@ Consultoria Externa (se necessário):
 
 ## E. Boas Práticas de Implementação 
 
-- Orquestração de Dados: Usar Cloud Composer para automatizar pipelines de dados complexos e garantir a execução dentro dos prazos diários.
-- Gerenciamento de Custo: Monitorar as consultas e o uso de recursos do BigQuery para evitar custos inesperados.
-- Monitoramento e Alertas: Implementar alertas no Stackdriver para monitorar falhas no pipeline e garantir alta disponibilidade.
-- Segurança: A adoção de boas práticas de segurança com Cloud DLP para mascaramento de PII e IAM para acessos mínimos.
-- Documentação: Manter uma documentação técnica detalhada e acessível para facilitar a manutenção e integração de novos membros.
-- Feedback Contínuo: Realizar revisões periódicas do sistema com a equipe de marketing para garantir que as soluções atendam às necessidades.
+- Segurança de Dados: Aplicar Cloud DLP e IAM: É essencial seguir o princípio de menor privilégio na concessão de acessos. Devemos criptografar dados sensíveis tanto em repouso quanto em trânsito para garantir a segurança e conformidade legal.
+- Estabelecer Alertas no Google Cloud Billing: Vamos monitorar os gastos em tempo real para evitar surpresas. Utilizaremos o Reservation Pricing do BigQuery para otimizar a utilização de recursos.
+- Configurar Google Cloud Monitoring: Precisamos implementar um sistema de monitoramento contínuo. Alertas para falhas, latência e desempenho serão cruciais, assim como dashboards em tempo real para a equipe de marketing.
+- Estabelecer Ciclos de Feedback com a Equipe de Marketing: Precisamos realizar reuniões regulares para discutir métricas de desempenho e ajustar as estratégias de coleta e análise de dados.
+- Promover uma Cultura de Dados: É fundamental incentivar a equipe a usar dados para tomar decisões. Fomentaremos a alfabetização em dados, treinando a equipe de marketing sobre como interpretar relatórios e dashboards, tornando-os mais autônomos na análise de resultados
 
 ## Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/viunicius/)
