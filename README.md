@@ -1,6 +1,6 @@
   # Teste Técnico - Engenharia de Dados
 
-![IP6](visualization/DP6.jpg)
+![DP6](visualization/DP6.png)
 
 ### Cenário
 
@@ -79,6 +79,9 @@ Fluxo de Comunicação:
 - **Compliance e Segurança de Dados:** Garantir que todas as práticas de acesso e compartilhamento de dados estejam em conformidade com as leis de proteção de dados (como LGPD/GDPR). Um responsável pela conformidade deve ser designado para revisar regularmente as práticas de segurança.
 
 ## D. Estrutura Organizacional Proposta 
+
+O organograma apresenta os níveis hierárquicos da estrutura organizacional alinhada às necessidades do projeto. As equipes de Marketing, Dados, TI e Compliance desempenham papéis essenciais na gestão e análise de dados, assegurando colaboração eficiente e conformidade com regulamentações. 
+
 ![Organograma](visualization/organograma.jpg)
 
 Equipe de Marketing:
