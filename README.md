@@ -1,6 +1,6 @@
   # Teste Técnico - Engenharia de Dados
 
-![IP6](https://i.imgur.com/kXTnWUI.png)
+![IP6](visualization/DP6.jpg)
 
 ### Cenário
 
@@ -19,7 +19,7 @@ O candidato deve propor soluções técnicas para resolver as dores do cliente, 
 
 O diagrama ilustra o fluxo de dados de diversas fontes (Google Analytics, Facebook Ads, Google Ads) sendo processados e consolidados no BigQuery, e o fluxo de dados para ferramentas de BI (Looker Studio) ou integração segura com agências externas.
 
-![Arquitetura](https://i.imgur.com/d8zmclK.jpeg)
+![Arquitetura](visualization/pipeline.jpg)
 
 Fluxo de Comunicação:
 - Google Analytics: Captura dados de conversão e envia via API para o Cloud Functions.
@@ -79,7 +79,7 @@ Fluxo de Comunicação:
 - **Compliance e Segurança de Dados:** Garantir que todas as práticas de acesso e compartilhamento de dados estejam em conformidade com as leis de proteção de dados (como LGPD/GDPR). Um responsável pela conformidade deve ser designado para revisar regularmente as práticas de segurança.
 
 ## D. Estrutura Organizacional Proposta 
-![Ornograma](https://i.imgur.com/CbqsYGS.jpeg)
+![Organograma](visualization/organograma.jpg)
 
 Equipe de Marketing:
 
